@@ -1,0 +1,1 @@
+//  ini file js yang akan dijalankan pada halaman index.php
