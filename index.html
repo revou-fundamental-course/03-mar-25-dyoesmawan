@@ -7,44 +7,82 @@
         <title>latihan web css</title>
         <!-- css -->
         <link rel="stylesheet" href="css\style.css">
-        <style>
+        <!-- <style>
             .content{
                 flex-direction: row;
                 display: flex;
             }
-            .content > div{
+            /* .content > div{
                 display: flex;
                 flex: 1;
-                align-content: center;
-                justify-content: center;
-            }
+                align-content: left;
+                justify-content: left;
+            } */
             footer > p{
                 text-align: end;
             }
             .table_person{
                 border: 10px ridge  yellow;
             }
-        </style>
+        </style> -->
     </head>
     <body>
         <!-- header -->
-        <header>
-            <h1> Test </h1>
-            <p> Ini adalah website latihan </p>
+        <header class="main-header">
+            <!-- Logo -->
+             <div class="main-logo"></div>
+            <!-- nav -->
+            <nav class="container">
+                <a href="">Home</a>
+                <a href="#our-profile">Our Profile</a>
+                <a href="#achievement">Achievement</a>
+                <a href="#message_us">Message Us</a>
+            </nav>
         </header>
-        <!-- nav -->
-        <nav class="container">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSUoIwwFudXqA2bOuUhrkskIxwyvU--9ZPGw&s" 
-            class="logo" alt="logo" width="40px" height="40px">
-           <div class="home">Home</div>
-           <div class="our_profile">Our Profile</div>
-           <div class="achievement">Achievement</div>
-           <div class="message_us">Message Us</div>
-        </nav>
-        <!-- main content-->
-        <main class="content" style="flex-direction: row; display: flex;">
 
+        <!-- garis pembatas -->
+        <hr style="border-width: 5px;">
+        
+        <!-- main content-->
+        <main class="content">
+            <!-- Home content -->
+            <section id="home" class="home">
+                <h1>Welcome to my portfolio website</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <!-- Banner autoslide -->
+                <div class="main-banner">
+                </div>
+            </section>
+
+            <hr />
+            <!-- Our profile -->
+            <section id="our-profile">
+                <header>
+                    <h1>Our Profile</h1>
+                </header>
+
+                <!-- Our Profile content -->
+                <div class="our-profile-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                </div>
+            </section>
+
+            <!-- Achievement -->    
+            <secion id="achievement">
+                <header>
+                    <h1>Achievement</h1>
+                </header>
+
+                <!-- Achievement content -->
+                <div class="achievement-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                </div>
+
+            </secion>
+
+            <!-- Message Us -->
             <div name="message_us" id="message_us">
+                <h1>Message Us</h1>
                 <form action="message_us.php" method="post">
                     <label for="name">Name:</label><br>
                     <input type="text" id="name" name="name" required><br>
@@ -61,7 +99,7 @@
 
         <!-- footer -->
         <footer>
-            <p>Created by dyoesmawan</p>
+            <p>&copy Created by dyoesmawan</p>
         </footer>
     </body>
 </html>
