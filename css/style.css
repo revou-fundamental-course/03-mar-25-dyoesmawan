@@ -6,6 +6,9 @@
     justify-content: space-between; 
     align-items: center;
 }
+.main-header > .main-menu > button:hover{
+    background-color: #f1f1f1;
+}
 /* for class = "main logo" */
 .main-logo{ 
     height: 50px;
@@ -32,10 +35,18 @@ nav>a{
 
 }
 .main-banner{
-    border: 1px solid;
     height: 500px;
     align-content: center; /* menengahi atas-bawah */
     text-align: center;    /* menengahi kiri-kanan */
+}
+
+.main-banner > .banner {
+    max-width: 100%;
+    height: 100%;
+    size: cover;
+    position: relative;
+    /* background-size: cover;
+    background-position: center; */
 }
 
 .our-profile-content{
@@ -56,4 +67,28 @@ footer{
     text-align: center;
     background-color: #f1f1f1;
     padding: 10px;
+}
+
+/* for responsive, applies style when  responsive screen changed*/
+@media only screen and (max-width: 600px) {
+    .main-header{
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        align-items: center;
+    }   
+    .main-menu{
+        display: flex; 
+        flex-direction: column; 
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .main-menu > a{
+        width: 90%;
+    }
+    .main-logo{
+        margin-bottom: 14px;
+    }
 }

@@ -32,7 +32,7 @@
             <!-- Logo -->
              <div class="main-logo"></div>
             <!-- nav -->
-            <nav class="container">
+            <nav class="main-menu">
                 <a href="">Home</a>
                 <a href="#our-profile">Our Profile</a>
                 <a href="#achievement">Achievement</a>
@@ -49,8 +49,14 @@
             <section id="home" class="home">
                 <h1>Welcome to my portfolio website</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+
                 <!-- Banner autoslide -->
                 <div class="main-banner">
+                    <img class="banner" src="asset\banner1.jpg" alt="banner1">
+                    <img class="banner" src="asset\banner2.jpg" alt="banner2">
+                    <img class="banner" src="asset\banner3.jpg" alt="banner3">
+                    <!-- <button onClick="plusDivs(-1)" class="prev">Previous</button>
+                    <button onClick="plusDivs(1)" class="next">Next</button> -->
                 </div>
             </section>
 
@@ -103,3 +109,29 @@
         </footer>
     </body>
 </html>
+
+<script>
+    //  ini file js yang akan dijalankan pada halaman index.php
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n){
+        showDivs(slideIndex += n);
+    }
+    function showDivs(n){
+        var i;
+        var imgList = document.getElementsByClassName("banner");
+        if (n > imgList.length) {slideIndex = 1}
+        else if (n < 1) {slideIndex = imgList.length}
+
+        for (i = 0; i < imgList.length; i++){
+            imgList[i].style.display = "none";
+        }
+        imgList[slideIndex-1].style.display = "block";
+    }
+
+    setInterval(() => {
+        plusDivs(1);
+    }, 1500);
+</script>
