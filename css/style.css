@@ -6,7 +6,7 @@
     flex-direction: row; 
     justify-content: space-between; 
     align-items: center;
-    background-color: skyblue;
+    background-color: skyblue;  
     padding: 10px;
 }
 .main-header > .main-menu > button:hover{
@@ -41,6 +41,7 @@ nav>a{
     height: 500px;
     align-content: center; /* menengahi atas-bawah */
     text-align: center;    /* menengahi kiri-kanan */
+    justify-items: center;
 }
 
 .main-banner > .banner {
@@ -48,6 +49,8 @@ nav>a{
     height: 100%;
     size: cover;
     position: relative;
+    text-align: center;
+    align-content: center;
     /* background-size: cover;
     background-position: center; */
 }
