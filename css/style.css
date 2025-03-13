@@ -95,7 +95,6 @@ nav>a{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 160px;
 }
 #message_us_content > #message-form {
     width: 50%;
