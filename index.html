@@ -30,10 +30,10 @@
         <!-- header -->
         <header class="main-header">
             <!-- Logo -->
-             <div class="main-logo"></div>
+            <div class="main-logo"></div>
             <!-- nav -->
             <nav class="main-menu">
-                <a href="">Home</a>
+                <a href="#">Home</a>
                 <a href="#our-profile">Our Profile</a>
                 <a href="#achievement">Achievement</a>
                 <a href="#message_us">Message Us</a>
@@ -47,11 +47,10 @@
         <main class="content">
             <!-- Home content -->
             <section id="home" class="home">
-                <h1>Welcome to my portfolio website</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <h1>Hi <span id="visitor-name"></span>, Welcome to my portfolio website!</h1>   
 
                 <!-- Banner autoslide -->
-                <div class="main-banner">
+                <div id="main-banner" class="main-banner">
                     <img class="banner" src="asset\banner1.jpg" alt="banner1">
                     <img class="banner" src="asset\banner2.jpg" alt="banner2">
                     <img class="banner" src="asset\banner3.jpg" alt="banner3">
@@ -60,78 +59,92 @@
                 </div>
             </section>
 
-            <hr />
+            <!-- garis pembatas -->
+            <hr style="border-width: 5px;">
             <!-- Our profile -->
             <section id="our-profile">
                 <header>
-                    <h1>Our Profile</h1>
+                    <h1>My Profile</h1>
                 </header>
 
                 <!-- Our Profile content -->
                 <div class="our-profile-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    <p>Saya sedang menempuh pendidikan jurusan Sistem Informasi  di Universitas Cenderawasih. 
+                        Mampu belajar dan beradaptasi dengan cepat terhadap situasi dan tantangan baru. 
+                        Memiliki pengalaman yang berkaitan dengan pelayanan publik dan kegiatan sosial, 
+                        serta bekerjasama dalam tim.</p>
                 </div>
             </section>
 
+            <!-- garis pembatas -->
+            <hr style="border-width: 5px;">
+
             <!-- Achievement -->    
-            <secion id="achievement">
+            <section id="achievement">
                 <header>
                     <h1>Achievement</h1>
                 </header>
 
                 <!-- Achievement content -->
-                <div class="achievement-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                </div>
+                <section class="achievement-content">
+                    <div class="achievements">
+                        <img src="asset\achievement.jpg" alt="achievement1" id="achievement1">
+                        <figcaption>achievement 1</figcaption>
+                    </div>
+                    <div class="achievements">
+                        <img src="asset\achievement.jpg" alt="achievement2" id="achievement2">
+                        <figcaption>achievement2</figcaption>
+                    </div>
+                    <div class="achievements">
+                        <img src="asset\achievement.jpg" alt="achievement3" id="achievement3">
+                        <figcaption>achievement3</figcaption>
 
-            </secion>
+                    </div>
+                </section>
+
+            </section>
 
             <!-- Message Us -->
             <div name="message_us" id="message_us">
-                <h1>Message Us</h1>
-                <form action="message_us.php" method="post">
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br>
-                    <label for="tgl_lahir">Tanggal Lahir:</label><br>
-                    <input type="date" id="tgl_lahir" name="tgl_lahir"><br>
-                    <label for="message">Message:</label><br>
-                    <input type="text" id="message" name="message"><br><br>
-                    <input type="submit" value="Submit">
-                </form>
+                <h1>Message Us</h1><br>
+                <div id="message_us_content">
+                    <form name="message-form" id="message-form" onsubmit="return validateForm()">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" name="name" required><br>
+                        <label for="tgl_lahir">Tanggal Lahir:</label>
+                        <input type="date" id="tgl_lahir" name="tgl_lahir"><br>
+                        <label for="jenis_kelamin">Jenis Kelamin:</label>
+                        <input type=radio id="jenis_kelamin" name="jenis_kelamin" value="Laki-laki" required>Laki-laki
+                        <input type=radio id="jenis_kelamin" name="jenis_kelamin" value="Perempuan" required>Perempuan<br>
+                        <label for="sender-message">Message:</label><br>
+                        <textarea id="message" name="message"></textarea>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                
+                    <div class="submitted-form" name="submitted-form" id="submitted-form">
+                        <p>Nama : <span id="sender-fullname"></span></p>
+                        <p>Tanggal Lahir : <span id="sender-birthdate"></span></p>
+                        <p>Jenis Kelamin : <span id="sender-gender"></span></p>
+                        <p>Message : <span id="sender-message"></span></p>
+                    </div>
+                </div>
             </div>
 
             
         </main>
 
+        <!-- garis pembatas -->
+        <hr style="border-width: 5px;">
+
         <!-- footer -->
         <footer>
             <p>&copy Created by dyoesmawan</p>
         </footer>
+        <p id="error-message"></p>
     </body>
 </html>
 
-<script>
-    //  ini file js yang akan dijalankan pada halaman index.php
-
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n){
-        showDivs(slideIndex += n);
-    }
-    function showDivs(n){
-        var i;
-        var imgList = document.getElementsByClassName("banner");
-        if (n > imgList.length) {slideIndex = 1}
-        else if (n < 1) {slideIndex = imgList.length}
-
-        for (i = 0; i < imgList.length; i++){
-            imgList[i].style.display = "none";
-        }
-        imgList[slideIndex-1].style.display = "block";
-    }
-
-    setInterval(() => {
-        plusDivs(1);
-    }, 1500);
+<script src="js/script.js">
+   
 </script>
